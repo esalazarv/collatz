@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/collatz/{value1}/{value2?}', function (Request $request) {
-    return $request->user();
-});
+Route::get('/collatz/records', 'CollatzController@records')->name('api.collatz.records');
+Route::get('/collatz/{value1}/{value2?}', 'CollatzController@calculate')->name('api.collatz.calculate');
