@@ -26,12 +26,12 @@ class CollatzController extends Controller
             $data = array_first($result['calculations']);
         }
 
-        return compact('data');
+        return response()->json(compact('data'));
     }
 
     public function records(Request $request)
     {
         $data = CollatzRecord::orderBy('iterations', 'desc')->get();
-        return compact('data');
+        return response()->json(compact('data'));
     }
 }
