@@ -25,14 +25,16 @@ composer install
 ```
 
 ##### Configure env file 
+Copy `.env.example` and add your database settings
 ```
 cp .env.example .env
 
 ```
 
-##### generate APP_KEY
+##### generate APP_KEY and run migrations
 ```
 php artisan key:generate
+php artisan migrate:fresh
 ```
 
 ##### Endpoints
